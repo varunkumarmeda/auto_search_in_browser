@@ -1,5 +1,6 @@
 import pyautogui
 import time
+import random
 
 def search_in_browser(query):
     # Open the browser (assuming it's already open)
@@ -16,8 +17,19 @@ def search_in_browser(query):
     pyautogui.press('enter')
 
 # Example usage
-search_query = "micheal jackson"
-search_in_browser(search_query)
+celebrities = [
+    "Tom Hanks", "Jennifer Aniston", "Leonardo DiCaprio", "Beyoncé", "Brad Pitt",
+    "Taylor Swift", "Dwayne Johnson", "Emma Watson", "Chris Hemsworth", "Angelina Jolie",
+    "Robert Downey Jr.", "Selena Gomez", "Keanu Reeves", "Scarlett Johansson", "Will Smith",
+    "Jennifer Lawrence", "Meryl Streep", "Chris Evans", "Adele", "George Clooney",
+    "Shakira", "Hugh Jackman", "Natalie Portman", "Cristiano Ronaldo", "Anne Hathaway",
+    "Matthew McConaughey", "Katy Perry", "Mark Wahlberg", "Johnny Depp"
+]
 
-# Allow time for the browser to process the search
-time.sleep(2)
+for celebrity in celebrities:
+    # Perform the search
+    search_in_browser(celebrity)
+
+    # Random sleep time between 3 and 6 seconds
+    sleep_time = random.uniform(3, 6)
+    time.sleep(sleep_time)
