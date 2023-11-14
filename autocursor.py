@@ -13,7 +13,7 @@ def search_in_browser(query):
     # Type the search query
     pyautogui.typewrite(query)
 
-    # Press Enter to perform the search
+    #press enter from the keyboard key
     pyautogui.press('enter')
 
 # Example usage
