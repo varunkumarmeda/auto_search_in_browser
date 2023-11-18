@@ -1,5 +1,6 @@
 import pyautogui
 import time
+from faker import Faker
 import random
 
 def search_in_browser(query):
@@ -13,23 +14,22 @@ def search_in_browser(query):
     # Type the search query
     pyautogui.typewrite(query)
 
-    #press enter from the keyboard key
+    # Press enter from the keyboard key
     pyautogui.press('enter')
 
-# Example usage
-celebrities = [
-    "Tom Hanks", "Jennifer Aniston", "Leonardo DiCaprio", "Beyoncé", "Brad Pitt",
-    "Taylor Swift", "Dwayne Johnson", "Emma Watson", "Chris Hemsworth", "Angelina Jolie",
-    "Robert Downey Jr.", "Selena Gomez", "Keanu Reeves", "Scarlett Johansson", "Will Smith",
-    "Jennifer Lawrence", "Meryl Streep", "Chris Evans", "Adele", "George Clooney",
-    "Shakira", "Hugh Jackman", "Natalie Portman", "Cristiano Ronaldo", "Anne Hathaway",
-    "Matthew McConaughey", "Katy Perry", "Mark Wahlberg", "Johnny Depp"
-]
+# Initialize Faker
+fake = Faker()
 
-for celebrity in celebrities:
+# Number of searches to perform
+num_searches = 30
+
+for _ in range(num_searches):
+    # Generate a random word for the search query
+    random_word = fake.word()
+
     # Perform the search
-    search_in_browser(celebrity)
+    search_in_browser(random_word)
 
-    # Random sleep time between 3 and 6 seconds
-    sleep_time = random.uniform(3, 6)
+    # Random sleep time between 3 and 5 seconds
+    sleep_time = random.uniform(3, 5)
     time.sleep(sleep_time)
