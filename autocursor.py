@@ -30,6 +30,6 @@ for celebrity in celebrities:
     # Perform the search
     search_in_browser(celebrity)
 
-    # Random sleep time between 3 and 6 seconds
-    sleep_time = random.uniform(3, 6)
+    # Random sleep time between 3 and 5 seconds
+    sleep_time = random.uniform(3, 5)
     time.sleep(sleep_time)
